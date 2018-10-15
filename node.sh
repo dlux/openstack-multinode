@@ -8,7 +8,6 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
 
-set -o errexit
 set -o nounset
 set -o pipefail
 
@@ -71,6 +70,7 @@ else
         modprobe kvm-amd
     fi
 fi
+modprobe vhost_net
 source /etc/os-release || source /usr/lib/os-release
 case ${ID,,} in
     *suse)
